@@ -1,10 +1,10 @@
 import {Text, View} from 'react-native';
-import {ThemeProvider} from './components/ThemeProvider.tsx';
 import {
   initialWindowMetrics,
   SafeAreaProvider,
   SafeAreaView,
 } from 'react-native-safe-area-context';
+import {ThemeProvider} from '@components/ThemeProvider.tsx';
 
 const App = () => {
   return (
