@@ -1,20 +1,21 @@
-import {Text, View} from 'react-native';
 import {
   initialWindowMetrics,
   SafeAreaProvider,
   SafeAreaView,
 } from 'react-native-safe-area-context';
-import {ThemeProvider} from '@components/ThemeProvider.tsx';
+import { ThemeProvider } from '@components/ThemeProvider.tsx';
 import Typography from '@components/Typography.tsx';
+import Flex from '@components/Flex.tsx';
 
 const App = () => {
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <SafeAreaView>
+      <SafeAreaView style={{ flex: 1 }}>
         <ThemeProvider>
-          <View style={{backgroundColor: 'red'}}>
+          <Flex>
             <Typography>gd</Typography>
-          </View>
+            <Typography>gd</Typography>
+          </Flex>
         </ThemeProvider>
       </SafeAreaView>
     </SafeAreaProvider>
