@@ -1,12 +1,12 @@
-import {createContext, ReactNode, useContext, useEffect, useState} from 'react';
-import {Appearance} from 'react-native';
-import {ColorSchemeName} from 'react-native/Libraries/Utilities/Appearance';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { Appearance } from 'react-native';
+import { ColorSchemeName } from 'react-native/Libraries/Utilities/Appearance';
+import { DARK_COLOR, LIGHT_COLOR, ThemeColor } from '@/styles/colors.ts';
 import setColorScheme = Appearance.setColorScheme;
-import {Colors, DARK_COLOR, LIGHT_COLOR} from '@/styles/colors.ts';
 
 interface ThemeContextProps {
   theme: ColorSchemeName;
-  colors: Colors;
+  colors: ThemeColor;
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
@@ -17,15 +17,13 @@ const ThemeContext = createContext<ThemeContextProps>({
 interface ThemeProviderProps {
   children: ReactNode;
 }
-export const ThemeProvider = ({children}: ThemeProviderProps) => {
-  const [scheme, setScheme] = useState<ColorSchemeName>(
-    Appearance.getColorScheme(),
-  );
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+  const [scheme, setScheme] = useState<ColorSchemeName>(Appearance.getColorScheme());
   const colors = scheme === 'light' ? LIGHT_COLOR : DARK_COLOR;
 
   useEffect(() => {
     const subscription = Appearance.addChangeListener(
-      ({colorScheme: newColorScheme}: {colorScheme?: ColorSchemeName}) => {
+      ({ colorScheme: newColorScheme }: { colorScheme?: ColorSchemeName }) => {
         setScheme(newColorScheme);
       },
     );
@@ -33,9 +31,7 @@ export const ThemeProvider = ({children}: ThemeProviderProps) => {
   }, [setColorScheme]);
 
   return (
-    <ThemeContext.Provider value={{theme: scheme, colors}}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme: scheme, colors }}>{children}</ThemeContext.Provider>
   );
 };
 

@@ -1,21 +1,15 @@
-import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
-import {useTheme} from '@components/ThemeProvider.tsx';
+import { Text, TextProps, TextStyle } from 'react-native';
+import { useTheme } from '@components/ThemeProvider.tsx';
 
 interface TypographyProps extends TextProps {
   variant?: keyof typeof variants;
   color?: string;
 }
 
-const Typography = ({
-  variant = 'default',
-  color,
-  children,
-  style,
-  ...props
-}: TypographyProps) => {
-  const {colors} = useTheme();
+const Typography = ({ variant = 'default', color, children, style, ...props }: TypographyProps) => {
+  const { colors } = useTheme();
   const variantStyle = variants[variant];
-  const colorStyle = color ? {color} : {color: colors.black};
+  const colorStyle = color ? { color } : { color: colors.text };
 
   return (
     <Text style={[colorStyle, variantStyle, style]} {...props}>
