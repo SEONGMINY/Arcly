@@ -5,6 +5,7 @@ import {
   SafeAreaView,
 } from 'react-native-safe-area-context';
 import {ThemeProvider} from '@components/ThemeProvider.tsx';
+import Typography from '@components/Typography.tsx';
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
       <SafeAreaView>
         <ThemeProvider>
           <View style={{backgroundColor: 'red'}}>
-            <Text>gd</Text>
+            <Typography>gd</Typography>
           </View>
         </ThemeProvider>
       </SafeAreaView>
