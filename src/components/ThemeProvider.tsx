@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { Appearance } from 'react-native';
 import { ColorSchemeName } from 'react-native/Libraries/Utilities/Appearance';
-import { DARK_COLOR, LIGHT_COLOR, ThemeColor } from '@/styles/colors.ts';
+import { DARK_COLOR, LIGHT_COLOR, ThemeColor } from '@styles/colors.ts';
 import setColorScheme = Appearance.setColorScheme;
 
 interface ThemeContextProps {

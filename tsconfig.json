@@ -9,14 +9,11 @@
       "@components/*": [
         "components/*"
       ],
-      "@containers/*": [
-        "containers/*"
+      "@styles/*": [
+        "styles/*"
       ],
-      "@modules/*": [
-        "modules/*"
-      ],
-      "@scenes/*": [
-        "scenes/*"
+      "@screens/*": [
+        "screens/*"
       ],
       "@utils/*": [
         "utils/*"
