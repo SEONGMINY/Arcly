@@ -30,7 +30,7 @@ const MEDIUM: TextStyle = {
   fontWeight: '500',
 };
 
-const variants: Record<string, TextStyle> = {
+const variants = {
   default: BASE,
   bold: BOLD,
   medium: MEDIUM,
@@ -55,6 +55,6 @@ const variants: Record<string, TextStyle> = {
   p3: {
     fontSize: 16,
   },
-};
+} as const;
 
 export default Typography;
