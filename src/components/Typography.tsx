@@ -17,7 +17,7 @@ const Typography = ({
 }: TypographyProps) => {
   const { colors } = useTheme();
   const variantStyle = variants[variant];
-  const colorStyle = color ? { color } : { color: colors.text };
+  const colorStyle = color ? { color } : { color: colors['themes-text-text'] };
   const fontSizeStyle = fontSize ? { fontSize } : {};
 
   return (
