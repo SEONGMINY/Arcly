@@ -4,15 +4,24 @@ import { useTheme } from '@components/ThemeProvider.tsx';
 interface TypographyProps extends TextProps {
   variant?: keyof typeof variants;
   color?: string;
+  fontSize?: TextStyle['fontSize'];
 }
 
-const Typography = ({ variant = 'default', color, children, style, ...props }: TypographyProps) => {
+const Typography = ({
+  variant = 'default',
+  color,
+  fontSize,
+  children,
+  style,
+  ...props
+}: TypographyProps) => {
   const { colors } = useTheme();
   const variantStyle = variants[variant];
   const colorStyle = color ? { color } : { color: colors.text };
+  const fontSizeStyle = fontSize ? { fontSize } : {};
 
   return (
-    <Text style={[colorStyle, variantStyle, style]} {...props}>
+    <Text style={[colorStyle, variantStyle, fontSizeStyle, style]} {...props}>
       {children}
     </Text>
   );
@@ -32,8 +41,8 @@ const MEDIUM: TextStyle = {
 
 const variants = {
   default: BASE,
-  bold: BOLD,
-  medium: MEDIUM,
+  bold: { ...BASE, ...BOLD },
+  medium: { ...BASE, ...MEDIUM },
   h1: {
     ...BOLD,
     fontSize: 40,
