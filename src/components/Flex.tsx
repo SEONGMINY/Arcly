@@ -1,5 +1,4 @@
 import { StyleProp, StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
-import { useTheme } from '@components/ThemeProvider.tsx';
 
 interface FlexProps extends ViewProps {
   direction?: ViewStyle['flexDirection'];
@@ -7,10 +6,19 @@ interface FlexProps extends ViewProps {
   alignItems?: ViewStyle['alignItems'];
   flexWrap?: ViewStyle['flexWrap'];
   alignContent?: ViewStyle['alignContent'];
+  backgroundColor?: ViewStyle['backgroundColor'];
   padding?: ViewStyle['padding'];
+  paddingLeft?: ViewStyle['paddingLeft'];
+  paddingRight?: ViewStyle['paddingRight'];
+  paddingTop?: ViewStyle['paddingTop'];
+  paddingBottom?: ViewStyle['paddingBottom'];
   paddingHorizontal?: ViewStyle['paddingHorizontal'];
   paddingVertical?: ViewStyle['paddingVertical'];
   margin?: ViewStyle['margin'];
+  marginLeft?: ViewStyle['marginLeft'];
+  marginRight?: ViewStyle['marginRight'];
+  marginTop?: ViewStyle['marginTop'];
+  marginBottom?: ViewStyle['marginBottom'];
   marginHorizontal?: ViewStyle['marginHorizontal'];
   marginVertical?: ViewStyle['marginVertical'];
   gap?: number;
@@ -26,9 +34,17 @@ const Flex = ({
   flexWrap = 'nowrap',
   alignContent = 'flex-start',
   padding,
+  paddingLeft,
+  paddingRight,
+  paddingTop,
+  paddingBottom,
   paddingHorizontal,
   paddingVertical,
   margin,
+  marginLeft,
+  marginRight,
+  marginTop,
+  marginBottom,
   marginHorizontal,
   marginVertical,
   gap,
@@ -38,8 +54,6 @@ const Flex = ({
   children,
   ...props
 }: FlexProps) => {
-  const { colors } = useTheme();
-
   const defaultStyle: ViewStyle = {
     flexDirection: direction,
     justifyContent,
@@ -47,15 +61,22 @@ const Flex = ({
     flexWrap,
     alignContent,
     padding,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
+    paddingBottom,
     paddingHorizontal,
     paddingVertical,
     margin,
+    marginLeft,
+    marginRight,
+    marginTop,
+    marginBottom,
     marginHorizontal,
     marginVertical,
     gap,
     rowGap,
     columnGap,
-    backgroundColor: (style as ViewStyle)?.backgroundColor ?? colors.background,
   };
 
   const styles = StyleSheet.compose(defaultStyle, style);
