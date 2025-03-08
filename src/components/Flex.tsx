@@ -7,6 +7,12 @@ interface FlexProps extends ViewProps {
   flexWrap?: ViewStyle['flexWrap'];
   alignContent?: ViewStyle['alignContent'];
   backgroundColor?: ViewStyle['backgroundColor'];
+  width?: ViewStyle['width'];
+  minWidth?: ViewStyle['minWidth'];
+  maxWidth?: ViewStyle['maxWidth'];
+  height?: ViewStyle['height'];
+  minHeight?: ViewStyle['minHeight'];
+  maxHeight?: ViewStyle['maxHeight'];
   padding?: ViewStyle['padding'];
   paddingLeft?: ViewStyle['paddingLeft'];
   paddingRight?: ViewStyle['paddingRight'];
@@ -33,6 +39,12 @@ const Flex = ({
   alignItems = 'flex-start',
   flexWrap = 'nowrap',
   alignContent = 'flex-start',
+  width,
+  maxWidth,
+  minWidth,
+  height,
+  maxHeight,
+  minHeight,
   padding,
   paddingLeft,
   paddingRight,
@@ -60,6 +72,12 @@ const Flex = ({
     alignItems,
     flexWrap,
     alignContent,
+    width,
+    maxWidth,
+    minWidth,
+    height,
+    maxHeight,
+    minHeight,
     padding,
     paddingLeft,
     paddingRight,
