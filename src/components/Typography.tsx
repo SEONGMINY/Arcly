@@ -64,6 +64,9 @@ const variants = {
   p3: {
     fontSize: 16,
   },
+  caption: {
+    fontSize: 14,
+  },
 } as const;
 
 export default Typography;
