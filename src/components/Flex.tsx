@@ -1,6 +1,7 @@
 import { StyleProp, StyleSheet, View, ViewProps, ViewStyle } from 'react-native';
 
 interface FlexProps extends ViewProps {
+  flex?: ViewStyle['flex'];
   direction?: ViewStyle['flexDirection'];
   justifyContent?: ViewStyle['justifyContent'];
   alignItems?: ViewStyle['alignItems'];
@@ -34,6 +35,7 @@ interface FlexProps extends ViewProps {
 }
 
 const Flex = ({
+  flex,
   direction = 'row',
   justifyContent = 'flex-start',
   alignItems = 'flex-start',
@@ -63,10 +65,10 @@ const Flex = ({
   rowGap,
   columnGap,
   style,
-  children,
   ...props
 }: FlexProps) => {
   const defaultStyle: ViewStyle = {
+    flex,
     flexDirection: direction,
     justifyContent,
     alignItems,
@@ -99,11 +101,7 @@ const Flex = ({
 
   const styles = StyleSheet.compose(defaultStyle, style);
 
-  return (
-    <View style={styles} {...props}>
-      {children}
-    </View>
-  );
+  return <View style={styles} {...props} />;
 };
 
 export default Flex;
