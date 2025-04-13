@@ -110,8 +110,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				3A36E80C8556E0662CD6D993 /* [CP] Embed Pods Frameworks */,
 				206154CF21EF741AD54F3063 /* [CP] Copy Pods Resources */,
+				40EE1E7903FCC0CEBCEB7DA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,7 +200,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-arcly/Pods-arcly-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A36E80C8556E0662CD6D993 /* [CP] Embed Pods Frameworks */ = {
+		40EE1E7903FCC0CEBCEB7DA6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
