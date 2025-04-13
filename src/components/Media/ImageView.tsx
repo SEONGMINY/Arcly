@@ -1,3 +1,4 @@
+import Flex from '@/components/Flex';
 import { getImageSize } from '@/utils/imageSIze';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Dimensions, Image } from 'react-native';
@@ -40,7 +41,11 @@ const ImageView = ({ uri }: ImageViewProps) => {
   }, [uri]);
 
   if (loading) {
-    return <ActivityIndicator />;
+    return (
+      <Flex alignItems="center" justifyContent="center" width={FEED_IMAGE_WIDTH} height={201}>
+        <ActivityIndicator />
+      </Flex>
+    );
   }
 
   return (

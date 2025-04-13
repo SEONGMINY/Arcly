@@ -1,11 +1,14 @@
-import Flex from '@components/Flex.tsx';
-import Typography from '@components/Typography.tsx';
+import Card from '@components/Card';
+import Container from '@components/Container.tsx';
+import { FlatList } from 'react-native';
+import { MEDIA_URLS } from '@constants/urls';
 
 const HomeScreen = () => {
+  const cards = MEDIA_URLS;
   return (
-    <Flex>
-      <Typography>Home Screen</Typography>
-    </Flex>
+    <Container.SafeArea>
+      <FlatList data={cards} renderItem={({ item, index }) => <Card key={index} uri={item} />} />
+    </Container.SafeArea>
   );
 };
 
